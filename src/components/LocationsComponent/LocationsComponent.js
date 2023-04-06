@@ -6,7 +6,7 @@ import { Card, Container } from "react-bootstrap";
 
 const LocationsComponent = () => {
   const dispatch = useDispatch();
-  const { results, loadingLocations } = useSelector(
+  const { locations, loadingLocations } = useSelector(
     (state) => state.LocationsReducer
   );
   useEffect(() => {
@@ -15,11 +15,11 @@ const LocationsComponent = () => {
 
   return (
     <Container>
-      {results.map((results) => {
+      {locations.map((location) => {
         return (
           <Card>
-            <Card.Title>{results.name}</Card.Title>
-            <Card.Text>{results.dimension}</Card.Text>
+            <Card.Title>{location.name}</Card.Title>
+            <Card.Text>{location.dimension}</Card.Text>
           </Card>
         );
       })}

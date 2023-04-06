@@ -6,7 +6,7 @@ import { getEpisodes } from "../../store/episodes/action";
 
 const EpisodesComponent = () => {
   const dispatch = useDispatch();
-  const { results, loadingEpisodes } = useSelector(
+  const { episodes, loadingEpisodes } = useSelector(
     (state) => state.EpisodesReducer
   );
   useEffect(() => {
@@ -15,11 +15,11 @@ const EpisodesComponent = () => {
 
   return (
     <Container>
-      {results.map((episode) => {
+      {episodes.map((episode) => {
         return (
           <Card>
             <Card.Title>{episode.name}</Card.Title>
-            <Card.Text>{episode.episode}</Card.Text>
+            <Card.Text> {episode.episode} </Card.Text>
           </Card>
         );
       })}

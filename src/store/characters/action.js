@@ -30,7 +30,7 @@ export function getCharacters() {
         "https://rickandmortyapi.com/api/character"
         );
         // console.log(response);
-      dispatch(actionGetCharactersOk(response.data));
+      dispatch(actionGetCharactersOk(response.data.results));
         // console.log(response.data);
     } catch (error) {
       dispatch(actionGetCharactersFail(error));

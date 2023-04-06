@@ -29,7 +29,7 @@ export function getEpisodes() {
       const response = await axios.get(
         "https://rickandmortyapi.com/api/episode"
       );
-      dispatch(actionGetEpisodesOk(response.data));
+      dispatch(actionGetEpisodesOk(response.data.results));
     } catch (error) {
       dispatch(actionGetEpisodesFail(error));
     }

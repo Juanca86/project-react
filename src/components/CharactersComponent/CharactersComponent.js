@@ -17,12 +17,13 @@ const CharactersComponent = () => {
 
   return (
     <Container>
-      {characters.map((character) => {
-        console.log(characters, 'characters')
+    {console.log(characters, 'characters')}
+      {characters?.map((character) => {
+        console.log(character, 'character')
         return (
           <Card>
             <Card.Title>{character.name}</Card.Title>
-            <Card.Img>{character.image}</Card.Img>
+            <img src={character.image} alt=""/>
           </Card>
         );
       })}

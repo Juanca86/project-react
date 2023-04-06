@@ -29,7 +29,7 @@ export function getLocations() {
       const response = await axios.get(
         "https://rickandmortyapi.com/api/location"
       );
-      dispatch(actionGetLocationsOk(response.results));
+      dispatch(actionGetLocationsOk(response.data.results));
     } catch (error) {
       dispatch(actionGetLocationsFail(error));
     }
